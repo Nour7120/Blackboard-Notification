@@ -36,5 +36,6 @@ public abstract class Person {
         this.name = name;
     }
 
-    public abstract void notify_person(String message);
+    public abstract void notifyPerson(String message);
+
 }

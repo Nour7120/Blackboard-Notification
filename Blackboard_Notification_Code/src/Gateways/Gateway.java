@@ -3,10 +3,12 @@ package gateways;
 import messages.*;
 
 public interface Gateway {
-    public void sendDailyNewsMessage(DailyNewsMessage dailyNewsMessage, String[] placeHolders);
 
-    public void sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementMessage, String[] placeHolders);
+    String sendDailyNewsMessage(DailyNewsMessage dailyNewsMessage, String[] placeHolders, String email);
 
-    public void sendTaskAddedMessage(TaskAddedMessage addedMessage, String[] placeHolders, String email);
+    String sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementMessage, String[] placeHolders, String email);
+
+    String sendTaskAddedMessage(TaskAddedMessage addedMessage, String[] placeHolders, String email);
+
 
 }

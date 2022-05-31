@@ -1,5 +1,5 @@
 package messages;
 
 public interface DailyNewsMessage {
-    public String prepareMessage(String[] placeHolders);
+    String prepareMessage(String[] placeHolders);
 }

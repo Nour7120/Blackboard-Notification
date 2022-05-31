@@ -5,20 +5,23 @@ import messages.*;
 public class SMSGateway implements Gateway{
 
 	@Override
-	public void sendDailyNewsMessage(DailyNewsMessage dailyNewsMobileMessage, String[] placeHolders)
+	public String sendDailyNewsMessage(DailyNewsMessage dailyNewsMobileMessage, String[] placeHolders, String email)
 	{
-		dailyNewsMobileMessage.prepareMessage(placeHolders);
+		String preparedmessage = dailyNewsMobileMessage.prepareMessage(placeHolders);
+		return preparedmessage;
 	}
 
 	@Override
-	public void sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementMobileMessage, String[] placeHolders)
+	public String sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementMobileMessage, String[] placeHolders, String email)
 	{
-		announcementMobileMessage.prepareMessage(placeHolders);
+		String preparedmessage = announcementMobileMessage.prepareMessage(placeHolders);
+		return preparedmessage;
 	}
 
 	@Override
-	public void sendTaskAddedMessage(TaskAddedMessage addedMobileMessage, String[] placeHolders, String email)
+	public String sendTaskAddedMessage(TaskAddedMessage addedMobileMessage, String[] placeHolders, String email)
 	{
-		addedMobileMessage.prepareMessage(placeHolders);
+		String preparedmessage = addedMobileMessage.prepareMessage(placeHolders);
+		return preparedmessage;
 	}
 }

@@ -36,7 +36,9 @@ public class Professor extends Person{
 	}
 	
 	@Override
-	public void notify_person(String message) {
+
+	public void notifyPerson(String message) {
+
 		// do some stuff to notify professor
 		
 	}

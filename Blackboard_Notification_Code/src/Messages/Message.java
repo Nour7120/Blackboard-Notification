@@ -1,7 +1,6 @@
 package messages;
 
 import gateways.Gateway;
-import users.Person;
 
 public class Message {
 
@@ -9,14 +8,6 @@ public class Message {
     GradesAnnouncementMessage gradesAnnouncementMessage;
     TaskAddedMessage taskAddedMessage;
     Gateway gateway;
-
-
-//    public Message(){
-//        dailyNewsMessage = new DailyNewsEmailMessage();
-//        gradesAnnouncementMessage = new GradesAnnouncementEmailMessage();
-//        taskAddedMessage = new TaskAddedEmailMessage();
-//    }
-
 
     public void setGradesAnnouncementMessage(GradesAnnouncementMessage gradesAnnouncementMessage) {
         this.gradesAnnouncementMessage = gradesAnnouncementMessage;
@@ -49,4 +40,17 @@ public class Message {
     public Gateway getGateway() {
         return gateway;
     }
+
+    public String dailyNewsMessage(String[] placeholders, String email){
+        return gateway.sendDailyNewsMessage(dailyNewsMessage, placeholders, email);
+    }
+
+    public String gradesAnnouncementMessage(String[] placeholders, String email){
+        return gateway.sendGradesAnnouncementMessage(gradesAnnouncementMessage, placeholders, email);
+    }
+
+    public String taskAddedMessage(String[] placeholders, String email){
+        return gateway.sendTaskAddedMessage(taskAddedMessage, placeholders, email);
+    }
+
 }

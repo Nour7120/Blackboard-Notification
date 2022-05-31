@@ -5,20 +5,23 @@ import messages.*;
 public class EmailGateway implements Gateway{
 
 	@Override
-	public void sendDailyNewsMessage(DailyNewsMessage dailyNewsEmailMessage, String[] placeHolders)
+	public String sendDailyNewsMessage(DailyNewsMessage dailyNewsEmailMessage, String[] placeHolders, String email)
 	{
-		dailyNewsEmailMessage.prepareMessage(placeHolders);
+		String preparedmessage = dailyNewsEmailMessage.prepareMessage(placeHolders);
+		return preparedmessage;
 	}
 
 	@Override
-	public void sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementEmailMessage, String[] placeHolders)
+	public String sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementEmailMessage, String[] placeHolders, String email)
 	{
-		announcementEmailMessage.prepareMessage(placeHolders);
+		String preparedmessage = announcementEmailMessage.prepareMessage(placeHolders);
+		return preparedmessage;
 	}
 
 	@Override
-	public void sendTaskAddedMessage(TaskAddedMessage addedEmailMessage, String[] placeHolders, String email)
+	public String sendTaskAddedMessage(TaskAddedMessage addedEmailMessage, String[] placeHolders, String email)
 	{
-		addedEmailMessage.prepareMessage(placeHolders);
+		String preparedmessage = addedEmailMessage.prepareMessage(placeHolders);
+		return preparedmessage;
 	}
 }
