@@ -3,6 +3,9 @@ package courses;
 import java.util.ArrayList;
 
 import gateways.EmailGateway;
+
+import messages.Message;
+
 import messages.TaskAddedEmailMessage;
 import users.Professor;
 import users.Student;
@@ -104,21 +107,26 @@ public class Course {
 		// open connection for Email gateway and do some configurations to the object
 		
 		EmailGateway emailGateway = new EmailGateway();
-		
-		
+
+		Message msgs = new Message();
+
+		msgs.setTaskAddedMessage(msg);
+
+		msgs.setGateway(emailGateway);
+
 		for (Professor professor : professorsForEmailNotification) {
-			professor.notifyProfessor(notification);
-			emailGateway.sendMessage(notification);
+			professor.notify_person(notification);
+			emailGateway.sendTaskAddedMessage(msg, placeholders,professor.getEmail());
 		}
 		
 		for (TA ta : tAsForEmailNotification) {
-			ta.notifyTA(notification);
-			emailGateway.sendMessage(notification);
+			ta.notify_person(notification);
+			emailGateway.sendTaskAddedMessage(msg, placeholders,ta.getEmail());
 		}
 		
-		for (Student student : studentsForSMSNotification) {
-			student.notifyStudent(notification);
-			emailGateway.sendMessage(notification);
+		for (Student student : studentsForEmailNotification) {
+			student.notify_person(notification);
+			emailGateway.sendTaskAddedMessage(msg, placeholders,student.getEmail());
 		}
 	}
 	

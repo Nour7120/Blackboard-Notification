@@ -1,37 +1,24 @@
 package gateways;
 
-import messages.DailyNewsMobileMessage;
-import messages.GradesAnnouncementMobileMessage;
-import messages.TaskAddedMobileMessage;
+import messages.*;
 
-public class SMSGateway {
-	
-	public void sendMessage(Object message) {
-		String[] placeHolders = new String[] {}; // set some place holders here 
-		
-		if(message instanceof DailyNewsMobileMessage) {
-			DailyNewsMobileMessage msg = (DailyNewsMobileMessage) message;
-			
-			msg.prepareMessage(placeHolders);
-			
-			// some code to send message
-		}
-		
-		else if(message instanceof GradesAnnouncementMobileMessage) {
-			GradesAnnouncementMobileMessage msg = (GradesAnnouncementMobileMessage) message;
-			
-			msg.prepareMessage(placeHolders);
-			
-			// some code to send message
-		}
-		
-		else if(message instanceof TaskAddedMobileMessage) {
-			TaskAddedMobileMessage msg = (TaskAddedMobileMessage) message;
-			
-			msg.prepareMessage(placeHolders);
-			
-			// some code to send message to user
-		}
-		
+public class SMSGateway implements Gateway{
+
+	@Override
+	public void sendDailyNewsMessage(DailyNewsMessage dailyNewsMobileMessage, String[] placeHolders)
+	{
+		dailyNewsMobileMessage.prepareMessage(placeHolders);
+	}
+
+	@Override
+	public void sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementMobileMessage, String[] placeHolders)
+	{
+		announcementMobileMessage.prepareMessage(placeHolders);
+	}
+
+	@Override
+	public void sendTaskAddedMessage(TaskAddedMessage addedMobileMessage, String[] placeHolders, String email)
+	{
+		addedMobileMessage.prepareMessage(placeHolders);
 	}
 }
