@@ -1,8 +1,8 @@
-package Users;
+package users;
 
 public class Student {
 	String name;
-	int Id;
+	int id;
 	String email;
 	String phoneNumber;
 	
@@ -11,7 +11,7 @@ public class Student {
 	public Student(String name, int id, String email, String phoneNumber) {
 		super();
 		this.name = name;
-		Id = id;
+		this.id = id;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 	}
@@ -44,12 +44,12 @@ public class Student {
 		this.name = name;
 	}
 
-	public int getId() {
-		return Id;
+	public int getid() {
+		return id;
 	}
 
-	public void setId(int id) {
-		Id = id;
+	public void setid(int id) {
+		this.id = id;
 	}
 	
 	

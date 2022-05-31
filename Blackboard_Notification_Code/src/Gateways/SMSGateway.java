@@ -1,12 +1,12 @@
-package Gateways;
+package gateways;
 
-import Messages.DailyNewsMobileMessage;
-import Messages.GradesAnnouncementMobileMessage;
-import Messages.TaskAddedMobileMessage;
+import messages.DailyNewsMobileMessage;
+import messages.GradesAnnouncementMobileMessage;
+import messages.TaskAddedMobileMessage;
 
 public class SMSGateway {
 	
-	public void sendMessage(Object message, String user) {
+	public void sendMessage(Object message) {
 		String[] placeHolders = new String[] {}; // set some place holders here 
 		
 		if(message instanceof DailyNewsMobileMessage) {
