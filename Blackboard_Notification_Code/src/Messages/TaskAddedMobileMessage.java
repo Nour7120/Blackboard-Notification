@@ -1,14 +1,17 @@
-package Messages;
+package messages;
 
-public class TaskAddedMobileMessage {
+import java.util.Arrays;
 
-	public String prepareMessage(String placeHolders[]) {
+public class TaskAddedMobileMessage implements TaskAddedMessage{
+
+	@Override
+	public String prepareMessage(String[] placeHolders) {
 		// code to replace place holders of this type
-		return "";
+		return Arrays.toString(placeHolders);
 	}
-	
-	
+
+	@Override
 	public void addTeamDescription() {
-		
+		// Add Team Description
 	}
 }

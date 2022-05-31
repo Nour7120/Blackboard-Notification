@@ -1,37 +1,27 @@
-package Gateways;
+package gateways;
 
-import Messages.DailyNewsEmailMessage;
-import Messages.GradesAnnouncementEmailMessage;
-import Messages.TaskAddedEmailMessage;
+import messages.*;
 
-public class EmailGateway {
-	
-	public void sendMessage(Object message, String user) {
-		String[] placeHolders = new String[] {}; // set some place holders here 
-		
-		if(message instanceof DailyNewsEmailMessage) {
-			DailyNewsEmailMessage dailyNewsEmailMessage = (DailyNewsEmailMessage) message;
-			
-			dailyNewsEmailMessage.prepareMessage(placeHolders);
-			
-			// some code to send message
-		}
-		
-		else if(message instanceof GradesAnnouncementEmailMessage) {
-			GradesAnnouncementEmailMessage announcementEmailMessage = (GradesAnnouncementEmailMessage) message;
-			
-			announcementEmailMessage.prepareMessage(placeHolders);
-			
-			// some code to send message
-		}
-		
-		else if(message instanceof TaskAddedEmailMessage) {
-			TaskAddedEmailMessage addedEmailMessage = (TaskAddedEmailMessage) message;
-			
-			addedEmailMessage.prepareMessage(placeHolders);
-			
-			// some code to send message by email to user
-		}
-		
+public class EmailGateway implements Gateway{
+
+	@Override
+	public String sendDailyNewsMessage(DailyNewsMessage dailyNewsEmailMessage, String[] placeHolders, String email)
+	{
+		String preparedmessage = dailyNewsEmailMessage.prepareMessage(placeHolders);
+		return preparedmessage;
+	}
+
+	@Override
+	public String sendGradesAnnouncementMessage(GradesAnnouncementMessage announcementEmailMessage, String[] placeHolders, String email)
+	{
+		String preparedmessage = announcementEmailMessage.prepareMessage(placeHolders);
+		return preparedmessage;
+	}
+
+	@Override
+	public String sendTaskAddedMessage(TaskAddedMessage addedEmailMessage, String[] placeHolders, String email)
+	{
+		String preparedmessage = addedEmailMessage.prepareMessage(placeHolders);
+		return preparedmessage;
 	}
 }

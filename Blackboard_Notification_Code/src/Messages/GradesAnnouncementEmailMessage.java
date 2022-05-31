@@ -1,12 +1,16 @@
-package Messages;
+package messages;
 
-public class GradesAnnouncementEmailMessage {
+import java.util.Arrays;
 
-	public String prepareMessage(String placeHolders[]) {
+public class GradesAnnouncementEmailMessage implements GradesAnnouncementMessage{
+
+	@Override
+	public String prepareMessage(String[] placeHolders) {
 		// code to replace place holders of this type
-		return "";
+		return Arrays.toString(placeHolders);
 	}
-	
+
+	@Override
 	public boolean verifyGrades() {
 		// code to verify Grades before announcement
 		

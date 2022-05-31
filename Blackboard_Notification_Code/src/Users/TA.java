@@ -1,47 +1,12 @@
-package Users;
+package users;
 
-public class TA {
-	String name;
+public class TA extends Person{
+
 	String department;
-	String email;
-	String phoneNumber;
-	
-	
 
 	public TA(String name, String department, String email, String phoneNumber) {
-		super();
-		this.name = name;
+		super(name, email, phoneNumber);
 		this.department = department;
-		this.email = email;
-		this.phoneNumber = phoneNumber;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getDepartment() {
@@ -51,9 +16,9 @@ public class TA {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-	
-	public void notifyTA(String message) {
-		// do some stuff
+	@Override
+	public void notifyPerson(String message) {
+		// do some stuff to notify TA
 		
 	}
 	

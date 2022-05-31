@@ -1,9 +1,13 @@
-package Messages;
+package messages;
 
-public class DailyNewsMobileMessage {
-	
-	public String prepareMessage(String placeHolders[]) {
+import java.util.Arrays;
+
+public class DailyNewsMobileMessage implements DailyNewsMessage{
+
+	@Override
+	public String prepareMessage(String[] placeHolders) {
 		// code to replace place holders of this type
-		return "";
+		return Arrays.toString(placeHolders);
 	}
+
 }
