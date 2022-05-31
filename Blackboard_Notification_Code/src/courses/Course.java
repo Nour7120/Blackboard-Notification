@@ -97,7 +97,7 @@ public class Course {
 
 	// AddExam, PostGrades, PostAnnouncement  will be the same 
 
-	private void notifyAllUsersForTasks(String[] placeholders) {
+	public void notifyAllUsersForTasks(String[] placeholders) {
 		// notify users by email
 		TaskAddedEmailMessage msg = new TaskAddedEmailMessage();
 		
@@ -118,7 +118,7 @@ public class Course {
 
 	}
 
-	private void notifyAllUsersForDailyNews(String[] placeholders) {
+	public void notifyAllUsersForDailyNews(String[] placeholders) {
 		// notify users by email
 		DailyNewsEmailMessage msg = new DailyNewsEmailMessage();
 
@@ -138,7 +138,7 @@ public class Course {
 
 	}
 
-	private void notifyAllUsersForGrades(String[] placeholders) {
+	public void notifyAllUsersForGrades(String[] placeholders) {
 		// notify users by email
 		GradesAnnouncementEmailMessage msg = new GradesAnnouncementEmailMessage();
 
