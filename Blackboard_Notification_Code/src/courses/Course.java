@@ -3,7 +3,9 @@ package courses;
 import java.util.ArrayList;
 
 import gateways.EmailGateway;
+
 import messages.Message;
+
 import messages.TaskAddedEmailMessage;
 import users.Professor;
 import users.Student;

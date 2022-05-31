@@ -1,5 +1,4 @@
 package users;
-
 public class Student extends Person{
 
 	int id;
