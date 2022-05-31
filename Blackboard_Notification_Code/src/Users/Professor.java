@@ -1,54 +1,21 @@
-package Users;
+package users;
 
 import java.sql.Date;
 
-public class Professor {
-	String name;
+public class Professor extends Person{
+
 	String department;
 	Date hirringDate;
-	String PhDTopic;
-	String email;
-	String phoneNumber;
-	
-	
+	String phDTopic;
+
 	public Professor(String name, String department, Date hirringDate, String phDTopic, String email,
 			String phoneNumber) {
-		super();
-		this.name = name;
+		super(name, email, phoneNumber);
 		this.department = department;
 		this.hirringDate = hirringDate;
-		PhDTopic = phDTopic;
-		this.email = email;
-		this.phoneNumber = phoneNumber;
-	}
-	
-	
-	public String getEmail() {
-		return email;
+		this.phDTopic = phDTopic;
 	}
 
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getDepartment() {
 		return department;
 	}
@@ -61,16 +28,16 @@ public class Professor {
 	public void setHirringDate(Date hirringDate) {
 		this.hirringDate = hirringDate;
 	}
-	public String getPhDTopic() {
-		return PhDTopic;
+	public String getphDTopic() {
+		return phDTopic;
 	}
-	public void setPhDTopic(String phDTopic) {
-		PhDTopic = phDTopic;
+	public void setphDTopic(String phDTopic) {
+		this.phDTopic = phDTopic;
 	}
 	
-	
-	public void notifyProfessor(String message) {
-		// do some stuff
+	@Override
+	public void notify_person(String message) {
+		// do some stuff to notify professor
 		
 	}
 	

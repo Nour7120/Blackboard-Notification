@@ -1,60 +1,25 @@
-package Users;
+package users;
 
-public class Student {
-	String name;
-	int Id;
-	String email;
-	String phoneNumber;
-	
-	
-	
+public class Student extends Person{
+
+	int id;
+
 	public Student(String name, int id, String email, String phoneNumber) {
-		super();
-		this.name = name;
-		Id = id;
-		this.email = email;
-		this.phoneNumber = phoneNumber;
+		super(name, email, phoneNumber);
+		this.id = id;
 	}
 
-
-	public String getEmail() {
-		return email;
+	public int getid() {
+		return id;
 	}
 
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
+	public void setid(int id) {
+		this.id = id;
 	}
 	
-	
-	public void notifyStudent(String message) {
-		// do some stuff
+	@Override
+	public void notify_person(String message) {
+		// do some stuff to notify student
 	}
 	
 }
