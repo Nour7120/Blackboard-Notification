@@ -1,4 +1,4 @@
-package Users;
+package users;
 
 import java.sql.Date;
 
@@ -6,7 +6,7 @@ public class Professor {
 	String name;
 	String department;
 	Date hirringDate;
-	String PhDTopic;
+	String phDTopic;
 	String email;
 	String phoneNumber;
 	
@@ -17,7 +17,7 @@ public class Professor {
 		this.name = name;
 		this.department = department;
 		this.hirringDate = hirringDate;
-		PhDTopic = phDTopic;
+		this.phDTopic = phDTopic;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 	}
@@ -61,11 +61,11 @@ public class Professor {
 	public void setHirringDate(Date hirringDate) {
 		this.hirringDate = hirringDate;
 	}
-	public String getPhDTopic() {
-		return PhDTopic;
+	public String getphDTopic() {
+		return phDTopic;
 	}
-	public void setPhDTopic(String phDTopic) {
-		PhDTopic = phDTopic;
+	public void setphDTopic(String phDTopic) {
+		this.phDTopic = phDTopic;
 	}
 	
 	
