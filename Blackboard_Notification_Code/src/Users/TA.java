@@ -17,7 +17,9 @@ public class TA extends Person{
 		this.department = department;
 	}
 	@Override
+
 	public void notifyPerson(String message) {
+
 		// do some stuff to notify TA
 		
 	}

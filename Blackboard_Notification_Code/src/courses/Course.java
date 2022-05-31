@@ -3,11 +3,13 @@ package courses;
 import java.util.ArrayList;
 
 import gateways.EmailGateway;
+
 import messages.DailyNewsEmailMessage;
 import messages.GradesAnnouncementEmailMessage;
 import messages.Message;
 import messages.TaskAddedEmailMessage;
 import users.Person;
+
 import users.Professor;
 import users.Student;
 import users.TA;
@@ -20,8 +22,10 @@ public class Course {
 	ArrayList<String> exams;
 	ArrayList<String> grades;
 	
+
 	ArrayList<Person> personForEmailNotification;
 	ArrayList<Person> personForSMSNotification;
+
 	
 	public Course(String name, String code) {
 		super();
@@ -32,8 +36,10 @@ public class Course {
 		exams = new ArrayList<>();
 		grades = new ArrayList<>();
 
+
 		personForEmailNotification = new ArrayList<>();
 		personForSMSNotification = new ArrayList<>();
+
 	}
 
 	public String getName() {
@@ -53,6 +59,7 @@ public class Course {
 	}
 	
 	public void subscribeProfessorForEmailNotification(Professor professor) {
+
 		personForEmailNotification.add(professor);
 	}
 	
@@ -74,6 +81,7 @@ public class Course {
 	
 	public void subscribeStudentForSMSNotification(Student student) {
 		personForSMSNotification.add(student);
+
 	}
 	
 	
@@ -82,6 +90,7 @@ public class Course {
 		announcements.add(assignName);
 		String[] placeholders = new String[] {assignName, assignBody};
 		// do some logic here 
+
 
 		notifyAllUsersForTasks(placeholders);
 	}
@@ -101,6 +110,7 @@ public class Course {
 		msgs.setTaskAddedMessage(msg);
 
 		msgs.setGateway(emailGateway);
+
 
 		for (Person person : personForEmailNotification) {
 			person.notifyPerson(msgs.taskAddedMessage(placeholders, person.getEmail()));
@@ -147,4 +157,5 @@ public class Course {
 		}
 
 	}
+
 }

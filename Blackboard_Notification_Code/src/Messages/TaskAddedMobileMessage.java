@@ -1,8 +1,10 @@
 package messages;
 
+
 import java.util.Arrays;
 
 public class TaskAddedMobileMessage implements TaskAddedMessage{
+
 
 	@Override
 	public String prepareMessage(String[] placeHolders) {

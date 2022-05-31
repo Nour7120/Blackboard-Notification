@@ -37,4 +37,5 @@ public abstract class Person {
     }
 
     public abstract void notifyPerson(String message);
+
 }

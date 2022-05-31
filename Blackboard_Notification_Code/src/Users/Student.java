@@ -1,5 +1,4 @@
 package users;
-
 public class Student extends Person{
 
 	int id;
@@ -18,7 +17,9 @@ public class Student extends Person{
 	}
 	
 	@Override
+
 	public void notifyPerson(String message) {
+
 		// do some stuff to notify student
 	}
 	

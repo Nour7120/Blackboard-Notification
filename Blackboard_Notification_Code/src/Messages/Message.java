@@ -2,7 +2,6 @@ package messages;
 
 import gateways.Gateway;
 
-
 public class Message {
 
     DailyNewsMessage dailyNewsMessage;
@@ -53,4 +52,5 @@ public class Message {
     public String taskAddedMessage(String[] placeholders, String email){
         return gateway.sendTaskAddedMessage(taskAddedMessage, placeholders, email);
     }
+
 }
